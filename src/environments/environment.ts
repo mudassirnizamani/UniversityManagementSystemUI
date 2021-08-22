@@ -9,9 +9,15 @@ export const environment = {
     Student: '/Auth/Student',
     CourseAdviser: '/Auth/CourseAdviser',
     ItAdministrator: '/Auth/ItAdministrator',
-    Signin: '',
+    Signin: '/Auth/Signin',
   },
-  User: {},
+  User: {
+    GetAllUsers: '/User/GetAllUsers/',
+    GetUserByUserName: '/User/GetUserByUserName/',
+    GetAllUSerCount: '/User/GetAllUsersCount/',
+    GetUserRoleByUserName: '/User/GetUserRoleByUserName/',
+    GetUserRoleByEmail: '/User/GetUserRoleByEmail/',
+  },
 };
 
 /*

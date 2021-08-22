@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { ICourseAdviserAuth } from '../models/ICourseAdviserAuth.interface';
 import { IItAdministratorAuth } from '../models/IItAdministratorAuth';
+import { ISignin } from '../models/ISignin.interface';
 import { IStudentAuth } from '../models/IStudentAuth.interface';
 
 @Injectable({
@@ -28,6 +29,13 @@ export class AuthService {
   ItAdministrator(model: IItAdministratorAuth) {
     return this.http.post(
       `${environment.APIBase}${environment.Auth.ItAdministrator}`,
+      model
+    );
+  }
+
+  Signin(model: ISignin) {
+    return this.http.post(
+      `${environment.APIBase}${environment.Auth.Signin}`,
       model
     );
   }
