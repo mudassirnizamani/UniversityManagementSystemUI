@@ -7,6 +7,8 @@ export const environment = {
   APIBase: 'https://localhost:5001/api',
   Auth: {
     Student: '/Auth/Student',
+    CourseAdviser: '/Auth/CourseAdviser',
+    ItAdministrator: '/Auth/ItAdministrator',
     Signin: '',
   },
   User: {},
