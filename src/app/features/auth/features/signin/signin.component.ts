@@ -83,9 +83,18 @@ export class SigninComponent implements OnInit {
                       this.isLoading = false;
                       this.toastr.success(
                         `Successfully signin as ${model.email}`,
-                        `Welcome to Student Dashboard`
+                        `Welcome to Student Dashboard` 
                       );
                       this.router.navigateByUrl('/student');
+                    }else if (role == 'ItAdministrator') {
+                      localStorage.setItem('userType', 'ItAdministrator');
+                      this.Form.reset();
+                      this.isLoading = false;
+                      this.toastr.success(
+                        `Successfully signin as ${model.email}`,
+                        `Welcome to It Administrator Dashboard`
+                      );
+                      this.router.navigateByUrl('/itadministrator');
                     } else {
                       this.isLoading = false;
                       this.toastr.error(

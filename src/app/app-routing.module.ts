@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './core/guards/auth/auth.guard';
+import { StudentGuard } from './core/guards/student/student.guard';
 
 // Importing Guards
-import { AuthGuard } from './core/guards/auth.guard';
-import { StudentGuard } from './core/guards/student.guard';
 
 const routes: Routes = [
   {
@@ -19,6 +19,13 @@ const routes: Routes = [
         (module) => module.StudentModule
       ),
     canActivate: [StudentGuard],
+  },
+  {
+    path: 'itadministrator',
+    loadChildren: () =>
+      import('./features/it-administrator/it-administrator.module').then(
+        (module) => module.ItAdministratorModule
+      ),
   },
 ];
 

@@ -1,1 +1,31 @@
-<p>users works!</p>
+<div class="page3__container">
+  <div class="student" style="padding: 0 !important">
+    <div class="student__head">
+      <h1 class="student__title title title_big">User Profile</h1>
+      <div class="student__text">These are total students in Database.</div>
+    </div>
+    <div class="student__control">
+      <!-- <div class="student__search">
+            <button class="student__open">
+              <svg class="icon icon-search">
+                <use
+                  xlink:href="/assets/templates/square_template/img/sprite.svg#icon-search"
+                ></use>
+              </svg></button
+            ><input
+              class="student__input"
+              type="text"
+              placeholder="Search Student"
+            />
+          </div> -->
+    </div>
+    <div class="student__list student__list_3">
+      <app-user-card
+        class="student__item"
+        *ngFor="let user of users"
+        [userData]="user"
+      >
+      </app-user-card>
+    </div>
+  </div>
+</div>

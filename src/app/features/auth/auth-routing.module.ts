@@ -56,6 +56,13 @@ const routes: Routes = [
             (module) => module.ItAdministratorModule
           ),
       },
+      {
+        path: 'auth/dean',
+        loadChildren: () =>
+          import('./features/dean/dean.module').then(
+            (module) => module.DeanModule
+          ),
+      },
     ],
   },
 ];

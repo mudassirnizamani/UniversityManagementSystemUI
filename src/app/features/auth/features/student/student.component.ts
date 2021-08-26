@@ -2,24 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { MessageService } from 'primeng/api';
 import { AuthService } from '../../services/auth.service';
-import { IStudentAuth } from '../models/IStudentAuth.inteface';
+import { IStudentAuth } from '../../models/IStudentAuth.interface';
 
 @Component({
   selector: 'app-student',
   templateUrl: './student.component.html',
   styleUrls: ['./student.component.scss'],
-  providers: [MessageService],
 })
 export class StudentComponent implements OnInit {
   Form: FormGroup;
   isLoading: boolean;
-  userNameExists: boolean;
-  emailExists: boolean;
 
   constructor(
-    private messageService: MessageService,
     private authService: AuthService,
     private router: Router,
     private toastr: ToastrService
@@ -138,12 +133,10 @@ export class StudentComponent implements OnInit {
               switch (element.code) {
                 case 'DuplicateUserName':
                   this.toastr.error(element.description, 'UserName Exists');
-                  this.userNameExists = true;
                   this.isLoading = false;
                   break;
                 case 'DuplicateEmail':
                   this.toastr.error(element.description, 'Email Exists');
-                  this.emailExists = true;
                   this.isLoading = false;
                   break;
                 default:

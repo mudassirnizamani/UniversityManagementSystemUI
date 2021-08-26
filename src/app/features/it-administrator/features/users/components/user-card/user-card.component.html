@@ -1,0 +1,12 @@
+<div class="student__ava">
+  <img class="student__pic" src="{{ userData.profilePic }}" alt="" />
+</div>
+<div class="student__title title title_sm">
+  {{ userData.firstName }} {{ userData.lastName }}
+</div>
+<a
+  class="student__btn btn btn_blue"
+  routerLink="/itadministrator/users/profile/{{ userData.userName }}"
+>
+  View Profile
+</a>

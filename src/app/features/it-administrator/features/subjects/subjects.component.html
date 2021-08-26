@@ -1,0 +1,29 @@
+<div
+  class="
+    text-3xl
+    font-semibold font-sans
+    text-black
+    w-100
+    bg-white
+    p-3
+    pl-4
+    mt-10
+    rounded-lg
+    mb-7
+  "
+>
+  Subjects
+</div>
+
+<p-table [value]="subjects" responsiveLayout="scroll">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Name</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-subject>
+    <tr>
+      <td>{{ subject.name }}</td>
+    </tr>
+  </ng-template>
+</p-table>

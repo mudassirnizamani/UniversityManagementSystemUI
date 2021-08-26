@@ -9,14 +9,25 @@ export const environment = {
     Student: '/Auth/Student',
     CourseAdviser: '/Auth/CourseAdviser',
     ItAdministrator: '/Auth/ItAdministrator',
+    Dean: '/Auth/Dean',
     Signin: '/Auth/Signin',
   },
   User: {
-    GetAllUsers: '/User/GetAllUsers/',
+    GetAuthenticatedUser: '/User/GetAuthenticatedUser/',
+    GetUsers: '/User/GetUsers/',
+    GetDeans: '/User/GetDeans/',
     GetUserByUserName: '/User/GetUserByUserName/',
-    GetAllUSerCount: '/User/GetAllUsersCount/',
+    GetUserById: '/User/GetUserById/',
+    GetUsersCount: '/User/GetUsersCount/',
     GetUserRoleByUserName: '/User/GetUserRoleByUserName/',
     GetUserRoleByEmail: '/User/GetUserRoleByEmail/',
+  },
+  Subject: {},
+  Faculty: {
+    GetFaculties: '/Faculty/GetFaculties/',
+    GetFacultyById: '/Faculty/GetFacultyById/',
+    AddFaculty: '/Faculty/CreateFaculty/',
+    DeleteFacultyById: '/Faculty/DeleteFacultyById/',
   },
 };
 

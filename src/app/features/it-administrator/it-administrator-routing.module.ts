@@ -22,6 +22,13 @@ const routes: Routes = [
           ),
       },
       {
+        path: 'users/profile/:username',
+        loadChildren: () =>
+          import('./features/users-profiles/users-profiles.module').then(
+            (module) => module.UsersProfilesModule
+          ),
+      },
+      {
         path: 'profile',
         loadChildren: () =>
           import('./features/profile/profile.module').then(
@@ -33,6 +40,34 @@ const routes: Routes = [
         loadChildren: () =>
           import('./features/settings/settings.module').then(
             (module) => module.SettingsModule
+          ),
+      },
+      {
+        path: 'departments',
+        loadChildren: () =>
+          import('./features/departments/departments.module').then(
+            (module) => module.DepartmentsModule
+          ),
+      },
+      {
+        path: 'faculties',
+        loadChildren: () =>
+          import('./features/faculties/faculties.module').then(
+            (module) => module.FacultiesModule
+          ),
+      },
+      {
+        path: 'faculties/:id',
+        loadChildren: () =>
+          import('./features/faculty-edit/faculty-edit.module').then(
+            (module) => module.FacultyEditModule
+          ),
+      },
+      {
+        path: 'subjects',
+        loadChildren: () =>
+          import('./features/subjects/subjects.module').then(
+            (module) => module.SubjectsModule
           ),
       },
     ],
