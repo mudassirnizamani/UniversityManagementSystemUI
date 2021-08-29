@@ -50,6 +50,13 @@ const routes: Routes = [
           ),
       },
       {
+        path: 'departments/:id',
+        loadChildren: () =>
+          import('./features/department-edit/department-edit.module').then(
+            (module) => module.DepartmentEditModule
+          ),
+      },
+      {
         path: 'faculties',
         loadChildren: () =>
           import('./features/faculties/faculties.module').then(

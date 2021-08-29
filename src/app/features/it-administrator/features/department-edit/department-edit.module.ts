@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { FacultyEditRoutingModule } from './faculty-edit-routing.module';
-import { FacultyEditComponent } from './faculty-edit.component';
+import { DepartmentEditRoutingModule } from './department-edit-routing.module';
+import { DepartmentEditComponent } from './department-edit.component';
 import { FormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
@@ -11,10 +11,10 @@ import { InputTextModule } from 'primeng/inputtext';
 import { TableModule } from 'primeng/table';
 
 @NgModule({
-  declarations: [FacultyEditComponent],
+  declarations: [DepartmentEditComponent],
   imports: [
     CommonModule,
-    FacultyEditRoutingModule,
+    DepartmentEditRoutingModule,
     ButtonModule,
     TableModule,
     DialogModule,
@@ -23,4 +23,4 @@ import { TableModule } from 'primeng/table';
     InputTextModule,
   ],
 })
-export class FacultyEditModule {}
+export class DepartmentEditModule {}

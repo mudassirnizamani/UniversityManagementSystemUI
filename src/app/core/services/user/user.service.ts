@@ -49,4 +49,16 @@ export class UserService {
   gerDeans() {
     return this.http.get(`${environment.APIBase}${environment.User.GetDeans}`);
   }
+
+  getCourseAdvisers() {
+    return this.http.get(
+      `${environment.APIBase}${environment.User.GetCourseAdvisers}`
+    );
+  }
+
+  getHeadOfDepartments() {
+    return this.http.get(
+      `${environment.APIBase}${environment.User.GetHeadOfDepartments}`
+    );
+  }
 }

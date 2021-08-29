@@ -1,1 +1,96 @@
-<p>departments works!</p>
+<div
+  class="
+    text-3xl
+    font-semibold font-sans
+    text-black
+    w-100
+    bg-white
+    p-3
+    pl-4
+    mt-10
+    rounded-lg
+    mb-7
+  "
+>
+  Departments
+  <button
+    pButton
+    pRipple
+    type="button"
+    label="Add New"
+    class="p-button-text"
+    (click)="showDialog()"
+  ></button>
+</div>
+
+<p-table [value]="departments" responsiveLayout="scroll">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Name</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-department>
+    <tr>
+      <td>
+        <a
+          routerLink="{{ department.id }}"
+          routerLinkActive="router-link-active"
+          class="text-blue-500"
+          >{{ department.name }}</a
+        >
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
+
+<p-dialog
+  [(visible)]="display"
+  [breakpoints]="{ '960px': '75vw', '640px': '100vw' }"
+  [style]="{ width: '50vw' }"
+>
+  <ng-template pTemplate="header"> Add New Department </ng-template>
+  <div class="form flex flex-col" style="width: 100%">
+    <input
+      type="text"
+      class="my-2"
+      pInputText
+      placeholder="Name"
+      [(ngModel)]="name"
+    />
+
+    <p-dropdown
+      [options]="hods"
+      [(ngModel)]="hodId"
+      style="width: 499px !important"
+      class="my-2"
+      optionValue="id"
+      placeholder="Head Of Department"
+      optionLabel="userName"
+    ></p-dropdown>
+
+    <p-dropdown
+      [options]="courseAdvisers"
+      [(ngModel)]="courseAdviserId"
+      style="width: 499px !important"
+      class="my-2"
+      placeholder="Course Adviser"
+      optionValue="id"
+      optionLabel="userName"
+    ></p-dropdown>
+  </div>
+
+  <ng-template pTemplate="footer">
+    <p-button
+      icon="pi pi-times"
+      (click)="display = false"
+      label="Cancel"
+      styleClass="p-button-text"
+    ></p-button>
+    <p-button
+      icon="pi pi-times"
+      (click)="addDepartment()"
+      label="Ok"
+      styleClass="p-button-text"
+    ></p-button>
+  </ng-template>
+</p-dialog>
