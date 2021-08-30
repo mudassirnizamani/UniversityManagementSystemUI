@@ -9,6 +9,7 @@ export const environment = {
     Student: '/Auth/Student',
     CourseAdviser: '/Auth/CourseAdviser',
     ItAdministrator: '/Auth/ItAdministrator',
+    HeadOfDepartment: '/Auth/HeadOfDepartment',
     Dean: '/Auth/Dean',
     Signin: '/Auth/Signin',
   },
@@ -27,12 +28,14 @@ export const environment = {
   Subject: {},
   Faculty: {
     GetFaculties: '/Faculty/GetFaculties/',
+    GetFacultiesCount: '/Faculty/GetFacultiesCount/',
     GetFacultyById: '/Faculty/GetFacultyById/',
     AddFaculty: '/Faculty/CreateFaculty/',
     DeleteFacultyById: '/Faculty/DeleteFacultyById/',
   },
   Department: {
     GetDepartments: '/Department/GetDepartments/',
+    GetDepartmentsCount: '/Department/GetDepartmentsCount/',
     AddFacultyDepartments: '/Department/AddFacultyDepartments/',
     GetDepartmentsOfFaculty: '/Department/GetDepartmentsOfFaculty/',
     GetDepartmentById: '/Department/GetDepartmentById/',

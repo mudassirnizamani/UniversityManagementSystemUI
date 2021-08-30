@@ -63,6 +63,27 @@ const routes: Routes = [
             (module) => module.DeanModule
           ),
       },
+      {
+        path: 'auth/admin',
+        loadChildren: () =>
+          import('./features/admin/admin.module').then(
+            (module) => module.AdminModule
+          ),
+      },
+      {
+        path: 'auth/superadmin',
+        loadChildren: () =>
+          import('./features/super-admin/super-admin.module').then(
+            (module) => module.SuperAdminModule
+          ),
+      },
+      {
+        path: 'auth/headofdepartment',
+        loadChildren: () =>
+          import(
+            './features/head-of-department/head-of-department.module'
+          ).then((module) => module.HeadOfDepartmentModule),
+      },
     ],
   },
 ];

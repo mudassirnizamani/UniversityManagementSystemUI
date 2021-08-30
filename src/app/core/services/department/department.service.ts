@@ -47,4 +47,10 @@ export class DepartmentService {
       `${environment.APIBase}${environment.Department.GetDepartmentsOfFaculty}${id}`
     );
   }
+
+  getDepartmentsCount() {
+    return this.http.get(
+      `${environment.APIBase}${environment.Department.GetDepartmentsCount}`
+    );
+  }
 }

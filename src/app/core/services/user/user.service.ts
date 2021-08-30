@@ -36,6 +36,12 @@ export class UserService {
     );
   }
 
+  getUserByUserName(userName: string) {
+    return this.http.get(
+      `${environment.APIBase}${environment.User.GetUserByUserName}${userName}`
+    );
+  }
+
   getUsersCount() {
     return this.http.get(
       `${environment.APIBase}${environment.User.GetUsersCount}`

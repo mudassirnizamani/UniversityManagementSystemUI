@@ -41,6 +41,13 @@ export class AuthService {
     );
   }
 
+  HeadOfDepartment(model: IDeanAuth) {
+    return this.http.post(
+      `${environment.APIBase}${environment.Auth.HeadOfDepartment}`,
+      model
+    );
+  }
+
   Signin(model: ISignin) {
     return this.http.post(
       `${environment.APIBase}${environment.Auth.Signin}`,

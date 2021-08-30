@@ -33,4 +33,10 @@ export class FacultyService {
       `${environment.APIBase}${environment.Faculty.DeleteFacultyById}${id}`
     );
   }
+
+  getFacultiesCount() {
+    return this.http.get(
+      `${environment.APIBase}${environment.Faculty.GetFacultiesCount}`
+    );
+  }
 }
