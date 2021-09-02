@@ -1,1 +1,387 @@
-<p>admin works!</p>
+<div class="login__container">
+    <div class="login__wrap">
+      <div class="login__head">
+        <a class="login__logo" href="#"
+          ><img class="login__pic" src="img/logo-white.svg" alt=""
+        /></a>
+      </div>
+      <form
+        class="login__form"
+        [formGroup]="Form"
+        (ngSubmit)="onSubmit()"
+        #form="ngForm"
+      >
+        <div class="login__body shadow-md hover:shadow-lg">
+          <div class="login__title login__title_sm font-serif tracking-wide">
+            Admin Sign Up
+          </div>
+          <div class="p-field flex flex-col my-2">
+            <label
+              class="text-black text-base font-sans font-normal"
+              [class.text-red-500]="
+                (UserName.invalid && UserName.touched) ||
+                (UserName.invalid && form.submitted)
+              "
+              >User Name</label
+            >
+            <input
+              formControlName="userName"
+              class="
+                my-1
+                appearance-none
+                border
+                rounded
+                w-full
+                py-2
+                px-3
+                text-gray-700
+                leading-tight
+                focus:outline-none focus:shadow-outline
+              "
+              pInputText
+              [class.border-red-500]="
+                (UserName.invalid && UserName.touched) ||
+                (UserName.invalid && form.submitted)
+              "
+            />
+            <div
+              *ngIf="
+                (UserName.invalid && UserName.touched) ||
+                (UserName.invalid && form.submitted)
+              "
+              class="text-red-500 mb-1 font-mono"
+            >
+              <small
+                class="font-normal text-sm"
+                *ngIf="UserName.hasError('required')"
+                >Plz enter your username</small
+              >
+              <small class="font-normal text-sm" *ngIf="UserName.errors.minlength"
+                >Username must have 2 characters</small
+              >
+              <small class="font-normal text-sm" *ngIf="UserName.errors.maxlength"
+                >Username should only contain 20 characters</small
+              >
+            </div>
+          </div>
+          <div class="p-field flex flex-col my-2">
+            <label
+              class="text-black text-base font-sans font-normal"
+              [class.text-red-500]="
+                (FirstName.invalid && FirstName.touched) ||
+                (FirstName.invalid && form.submitted)
+              "
+              >First Name</label
+            >
+            <input
+              formControlName="firstName"
+              class="
+                my-1
+                appearance-none
+                border
+                rounded
+                w-full
+                py-2
+                px-3
+                text-gray-700
+                leading-tight
+                focus:outline-none focus:shadow-outline
+              "
+              pInputText
+              [class.border-red-500]="
+                (FirstName.invalid && FirstName.touched) ||
+                (FirstName.invalid && form.submitted)
+              "
+            />
+            <div
+              *ngIf="
+                (FirstName.invalid && FirstName.touched) ||
+                (FirstName.invalid && form.submitted)
+              "
+              class="text-red-500 mb-1 font-mono"
+            >
+              <small
+                class="font-normal text-sm"
+                *ngIf="FirstName.hasError('required')"
+                >Plz enter your firstname</small
+              >
+              <small
+                class="font-normal text-sm"
+                *ngIf="FirstName.errors.minlength"
+                >Firstname must have 2 characters</small
+              >
+              <small
+                class="font-normal text-sm"
+                *ngIf="FirstName.errors.maxlength"
+                >Firstname should only contain 20 characters</small
+              >
+            </div>
+          </div>
+          <div class="p-field flex flex-col my-2">
+            <label
+              class="text-black text-base font-sans font-normal"
+              [class.text-red-500]="
+                (LastName.invalid && LastName.touched) ||
+                (LastName.invalid && form.submitted)
+              "
+              >Last Name</label
+            >
+            <input
+              formControlName="lastName"
+              class="
+                my-1
+                appearance-none
+                border
+                rounded
+                w-full
+                py-2
+                px-3
+                text-gray-700
+                leading-tight
+                focus:outline-none focus:shadow-outline
+              "
+              pInputText
+              [class.border-red-500]="
+                (LastName.invalid && LastName.touched) ||
+                (LastName.invalid && form.submitted)
+              "
+            />
+            <div
+              *ngIf="
+                (LastName.invalid && LastName.touched) ||
+                (LastName.invalid && form.submitted)
+              "
+              class="text-red-500 mb-1 font-mono"
+            >
+              <small
+                class="font-normal text-sm"
+                *ngIf="LastName.hasError('required')"
+                >Plz enter your lastname</small
+              >
+              <small class="font-normal text-sm" *ngIf="LastName.errors.minlength"
+                >Lastname must have 2 characters</small
+              >
+              <small class="font-normal text-sm" *ngIf="LastName.errors.maxlength"
+                >Lastname should only contain 20 characters</small
+              >
+            </div>
+          </div>
+          <div class="p-field flex flex-col my-2">
+            <label
+              class="text-black text-base font-sans font-normal"
+              [class.text-red-500]="
+                (Email.invalid && Email.touched) ||
+                (Email.invalid && form.submitted)
+              "
+              >Email</label
+            >
+            <input
+              formControlName="email"
+              class="
+                my-1
+                appearance-none
+                border
+                rounded
+                w-full
+                py-2
+                px-3
+                text-gray-700
+                leading-tight
+                focus:outline-none focus:shadow-outline
+              "
+              pInputText
+              [class.border-red-500]="
+                (Email.invalid && Email.touched) ||
+                (Email.invalid && form.submitted)
+              "
+            />
+            <div
+              *ngIf="
+                (Email.invalid && Email.touched) ||
+                (Email.invalid && form.submitted)
+              "
+              class="text-red-500 mb-1 font-mono"
+            >
+              <small
+                class="font-normal text-sm"
+                *ngIf="Email.hasError('required')"
+                >Plz enter your email</small
+              >
+              <small class="font-normal text-sm" *ngIf="Email.hasError('email')"
+                >Plz enter a valid email address</small
+              >
+              <small class="font-normal text-sm" *ngIf="Email.errors.pattern"
+                >Only Gmail address is allowed</small
+              >
+            </div>
+          </div>
+          <div class="p-field flex flex-col my-2">
+            <label
+              class="text-black text-base font-sans font-normal"
+              [class.text-red-500]="
+                (PhoneNumber.invalid && PhoneNumber.touched) ||
+                (PhoneNumber.invalid && form.submitted)
+              "
+              >Phone Number</label
+            >
+            <input
+              formControlName="phoneNumber"
+              class="
+                my-1
+                appearance-none
+                border
+                rounded
+                w-full
+                py-2
+                px-3
+                text-gray-700
+                leading-tight
+                focus:outline-none focus:shadow-outline
+              "
+              pInputText
+              [class.border-red-500]="
+                (PhoneNumber.invalid && PhoneNumber.touched) ||
+                (PhoneNumber.invalid && form.submitted)
+              "
+            />
+            <div
+              *ngIf="
+                (PhoneNumber.invalid && PhoneNumber.touched) ||
+                (PhoneNumber.invalid && form.submitted)
+              "
+              class="text-red-500 mb-1 font-mono"
+            >
+              <small
+                class="font-normal text-sm"
+                *ngIf="PhoneNumber.hasError('required')"
+                >Plz enter your phone number</small
+              >
+              <small
+                class="font-normal text-sm"
+                *ngIf="PhoneNumber.errors.pattern"
+                >Only Numbers are allowed</small
+              >
+            </div>
+          </div>
+          <div class="p-field flex flex-col my-2">
+            <label
+              class="text-black text-base font-sans font-normal"
+              [class.text-red-500]="
+                (Password.invalid && Password.touched) ||
+                (Password.invalid && form.submitted)
+              "
+              >Password</label
+            >
+            <input
+              formControlName="password"
+              class="
+                my-1
+                appearance-none
+                border
+                rounded
+                w-full
+                py-2
+                px-3
+                text-gray-700
+                leading-tight
+                focus:outline-none focus:shadow-outline
+              "
+              pPassword
+              type="password"
+              [feedback]="false"
+              [class.border-red-500]="
+                (Password.invalid && Password.touched) ||
+                (Password.invalid && form.submitted)
+              "
+            />
+            <div
+              *ngIf="
+                (Password.invalid && Password.touched) ||
+                (Password.invalid && form.submitted)
+              "
+              class="text-red-500 mb-1 font-mono"
+            >
+              <small
+                class="font-normal text-sm"
+                *ngIf="Password.hasError('required')"
+                >Plz enter a your password</small
+              >
+              <small class="font-normal text-sm" *ngIf="Password.errors.minlength"
+                >Password must have 8 characters</small
+              >
+            </div>
+          </div>
+          <div class="p-field flex flex-col my-2">
+            <label
+              class="text-black text-base font-sans font-normal"
+              [class.text-red-500]="
+                (ConfirmPassword.invalid && ConfirmPassword.touched) ||
+                (ConfirmPassword.invalid && form.submitted) ||
+                (Form.hasError('notMatched') && ConfirmPassword.valid)
+              "
+              >Confirm Password</label
+            >
+            <input
+              formControlName="confirmPassword"
+              class="
+                my-1
+                appearance-none
+                border
+                rounded
+                w-full
+                py-2
+                px-3
+                text-gray-700
+                leading-tight
+                focus:outline-none focus:shadow-outline
+              "
+              pPassword
+              type="password"
+              [feedback]="false"
+              [class.border-red-500]="
+                (ConfirmPassword.invalid && ConfirmPassword.touched) ||
+                (ConfirmPassword.invalid && form.submitted) ||
+                (Form.hasError('notMatched') && ConfirmPassword.valid)
+              "
+            />
+            <div
+              *ngIf="
+                (ConfirmPassword.invalid && ConfirmPassword.touched) ||
+                (ConfirmPassword.invalid && form.submitted) ||
+                (Form.hasError('notMatched') && ConfirmPassword.valid)
+              "
+              class="text-red-500 mb-1 font-mono"
+            >
+              <small
+                class="font-normal text-sm"
+                *ngIf="ConfirmPassword.hasError('required')"
+                >Plz confirm password</small
+              >
+              <small
+                class="font-normal text-sm"
+                *ngIf="Form.hasError('notMatched') && ConfirmPassword.valid"
+                >Password is not same</small
+              >
+            </div>
+          </div>
+          <button
+            type="submit"
+            [loading]="isLoading"
+            label="Signup"
+            icon="pi pi-user-plus"
+            pButton
+            pRipple
+            class="p-button-info p-button-raised rounded-full w-full"
+          ></button>
+  
+          <ul class="login__links">
+            <li><a class="login__link" routerLink="/auth/">Sign In?</a></li>
+            <li>
+              <a class="login__link" routerLink="/auth/signup/">Sign Up?</a>
+            </li>
+          </ul>
+        </div>
+      </form>
+    </div>
+  </div>
+  

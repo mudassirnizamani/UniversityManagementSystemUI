@@ -48,6 +48,20 @@ export class AuthService {
     );
   }
 
+  Admin(model: IDeanAuth) {
+    return this.http.post(
+      `${environment.APIBase}${environment.Auth.Admin}`,
+      model
+    );
+  }
+
+  SuperAdmin(model: IDeanAuth) {
+    return this.http.post(
+      `${environment.APIBase}${environment.Auth.SuperAdmin}`,
+      model
+    );
+  }
+
   Signin(model: ISignin) {
     return this.http.post(
       `${environment.APIBase}${environment.Auth.Signin}`,

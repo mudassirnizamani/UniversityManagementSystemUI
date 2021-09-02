@@ -83,10 +83,10 @@ export class SigninComponent implements OnInit {
                       this.isLoading = false;
                       this.toastr.success(
                         `Successfully signin as ${model.email}`,
-                        `Welcome to Student Dashboard` 
+                        `Welcome to Student Dashboard`
                       );
                       this.router.navigateByUrl('/student');
-                    }else if (role == 'ItAdministrator') {
+                    } else if (role == 'ItAdministrator') {
                       localStorage.setItem('userType', 'ItAdministrator');
                       this.Form.reset();
                       this.isLoading = false;
@@ -95,6 +95,51 @@ export class SigninComponent implements OnInit {
                         `Welcome to It Administrator Dashboard`
                       );
                       this.router.navigateByUrl('/itadministrator');
+                    } else if (role == 'Dean') {
+                      localStorage.setItem('userType', 'Dean');
+                      this.Form.reset();
+                      this.isLoading = false;
+                      this.toastr.success(
+                        `Successfully signin as ${model.email}`,
+                        `Welcome to It Dean Dashboard`
+                      );
+                      this.router.navigateByUrl('/dean');
+                    } else if (role == 'CourseAdviser') {
+                      localStorage.setItem('userType', 'CourseAdviser');
+                      this.Form.reset();
+                      this.isLoading = false;
+                      this.toastr.success(
+                        `Successfully signin as ${model.email}`,
+                        `Welcome to CourseAdviser Dashboard`
+                      );
+                      this.router.navigateByUrl('/courseadviser');
+                    } else if (role == 'HeadOfDepartment') {
+                      localStorage.setItem('userType', 'HeadOfDepartment');
+                      this.Form.reset();
+                      this.isLoading = false;
+                      this.toastr.success(
+                        `Successfully signin as ${model.email}`,
+                        `Welcome to HeadOfDepartment Dashboard`
+                      );
+                      this.router.navigateByUrl('/headofdepartment');
+                    } else if (role == 'Admin') {
+                      localStorage.setItem('userType', 'Admin');
+                      this.Form.reset();
+                      this.isLoading = false;
+                      this.toastr.success(
+                        `Successfully signin as ${model.email}`,
+                        `Welcome to Admin Dashboard`
+                      );
+                      this.router.navigateByUrl('/admin');
+                    } else if (role == 'SuperAdmin') {
+                      localStorage.setItem('userType', 'SuperAdmin');
+                      this.Form.reset();
+                      this.isLoading = false;
+                      this.toastr.success(
+                        `Successfully signin as ${model.email}`,
+                        `Welcome to SuperAdmin Dashboard`
+                      );
+                      this.router.navigateByUrl('/superadmin');
                     } else {
                       this.isLoading = false;
                       this.toastr.error(

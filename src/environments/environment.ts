@@ -11,6 +11,8 @@ export const environment = {
     ItAdministrator: '/Auth/ItAdministrator',
     HeadOfDepartment: '/Auth/HeadOfDepartment',
     Dean: '/Auth/Dean',
+    Admin: '/Auth/Admin',
+    SuperAdmin: '/Auth/SuperAdmin',
     Signin: '/Auth/Signin',
   },
   User: {
