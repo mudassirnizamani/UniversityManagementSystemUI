@@ -1,0 +1,49 @@
+<div class="sidebar2 js-sidebar2">
+    <div class="sidebar2__top">
+      <button class="sidebar2__close js-sidebar2-close">
+        <svg class="icon icon-close">
+          <use
+            xlink:href="/assets/square_template/img/sprite.svg#icon-close"
+          ></use>
+        </svg>
+      </button>
+    </div>
+    <div class="sidebar2__wrapper">
+      <app-sidebar-user-card></app-sidebar-user-card>
+      <div class="sidebar2__category">Dashboard</div>
+      <div class="sidebar2__nav">
+        <a
+          class="sidebar2__item"
+          [routerLink]="['/dean/']"
+          [routerLinkActiveOptions]="{ exact: true }"
+          routerLinkActive="active"
+          ><svg class="icon icon-dashboard">
+            <use
+              xlink:href="/assets/square_template/img/sprite.svg#icon-dashboard"
+            ></use></svg>Dashboard</a
+        >
+      </div>
+      <div class="sidebar2__category mt-2">Account</div>
+      <div class="sidebar2__nav">
+        <a
+          [routerLink]="['/dean/profile/']"
+          routerLinkActive="active"
+          class="sidebar2__item"
+          ><i class="icon pi pi-user text-gray-400"></i> Profile</a
+        >
+        <a
+          class="sidebar2__item"
+          routerLinkActive="active"
+          routerLink="/dean/settings/"
+          ><svg class="icon icon-settings">
+            <use
+              xlink:href="/assets/square_template/img/sprite.svg#icon-settings"
+            ></use></svg>Settings</a
+        >
+        <a (click)="signout()" class="sidebar2__item"
+          ><i class="icon text-gray-400 pi pi-sign-out"></i> Signout</a
+        >
+      </div>
+    </div>
+  </div>
+  

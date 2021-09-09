@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { DepartmentService } from 'src/app/core/services/department/department.service';
 import { FacultyService } from 'src/app/core/services/faculty/faculty.service';
+import { SubjectService } from 'src/app/core/services/subject/subject.service';
 import { UserService } from 'src/app/core/services/user/user.service';
 
 @Component({
@@ -13,11 +14,13 @@ export class TopOverviewComponent implements OnInit {
   usersCount: number;
   facultiesCount: number;
   departmentsCount: number;
+  subjectsCount: number;
 
   constructor(
     private userService: UserService,
     private facultyService: FacultyService,
-    private departmentService: DepartmentService
+    private departmentService: DepartmentService,
+    private subjectService: SubjectService
   ) {}
 
   ngOnInit(): void {
@@ -39,6 +42,10 @@ export class TopOverviewComponent implements OnInit {
 
     this.departmentService.getDepartmentsCount().subscribe((res: any) => {
       this.departmentsCount = res;
+    });
+
+    this.subjectService.getSubjectsCount().subscribe((res: any) => {
+      this.subjectsCount = res;
     });
   }
 }

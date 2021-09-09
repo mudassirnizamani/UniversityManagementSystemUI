@@ -1,0 +1,39 @@
+<div class="page2__container p-0">
+    <div class="page2__row">
+      <div class="page2__col page2__col_w35">
+        <div class="card1 mt-8">
+          <div class="card1__head">
+            <div class="card1__category h5-responsive">Subject</div>
+          </div>
+          <div class="card1__body">
+            <div class="card1__list"></div>
+            <div class="row user-detail-row my-3 flex">
+              <div class="col-5">
+                <label class="card__title">Name:</label>
+              </div>
+              <div class="col-3 ml-1">
+                <p>
+                  {{ subject.name }}
+                </p>
+              </div>
+            </div>
+            <div class="row user-detail-row my-3 flex">
+              <div class="col-5">
+                <label class="card__title">Action:</label>
+              </div>
+              <div class="col-3 ml-1">
+                <p>
+                  <button (click)="onDelete()" class="text-red-500">Delete</button>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+
+
+  
+  

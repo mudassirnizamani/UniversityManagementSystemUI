@@ -54,11 +54,14 @@
       <div class="page2__col page2__col_w65">
         <div class="card1 mt-8">
           <div class="card1__head">
-            <div class="card1__category h5-responsive">Subjects <a href="" class="text-blue-500 ml-1">Add Subject</a></div>
+            <div class="card1__category h5-responsive">Subjects <button (click)="onDisplay()" class="text-blue-500 ml-1">Add Subjects</button></div>
           </div>
           <div class="card1__body">
-            <div class="card1__list"></div>
-            
+            <div class="card1__list" *ngFor="let mySubject of departmentSubjects">
+            <p class="my-2">
+              <a routerLink="/itadministrator/subjects/{{ mySubject.id }}" class="text-blue-500">{{mySubject.name}}</a>
+            </p>
+          </div>
           </div>
         </div>
       </div>
@@ -68,3 +71,38 @@
 
   
   
+<p-dialog
+[(visible)]="display"
+[breakpoints]="{ '960px': '75vw', '640px': '100vw' }"
+[style]="{ width: '50vw' }"
+>
+<ng-template pTemplate="header"> Add Subject </ng-template>
+<div class="form flex flex-col" style="width: 100%">
+
+  <p-dropdown
+    [options]="subjects"
+    [(ngModel)]="subjectId"
+    style="width: 499px !important"
+    class="my-2"
+    optionValue="id"
+    placeholder="Select Subject"
+    optionLabel="name"
+  ></p-dropdown>
+
+</div>
+
+<ng-template pTemplate="footer">
+  <p-button
+    icon="pi pi-times"
+    (click)="display = false"
+    label="Cancel"
+    styleClass="p-button-text"
+  ></p-button>
+  <p-button
+    icon="pi pi-times"
+    (click)="addSubject()"
+    label="Ok"
+    styleClass="p-button-text"
+  ></p-button>
+</ng-template>
+</p-dialog>

@@ -62,17 +62,14 @@ export class DepartmentsComponent implements OnInit {
       headOfDepartmentId: this.hodId,
       name: this.name,
     };
-    console.log(model);
-    console.log(this.courseAdviserId);
-    console.log(this.hodId);
     this.departmentService.addDepartment(model).subscribe(
       (res: any) => {
         this.display = false;
-        this.toastr.success('Faculty added Successfully');
+        this.toastr.success('Department added Successfully');
       },
       (error: any) => {
         this.display = false;
-        this.toastr.success('Faculty added Successfully');
+        this.toastr.success('Department added Successfully');
       }
     );
   }

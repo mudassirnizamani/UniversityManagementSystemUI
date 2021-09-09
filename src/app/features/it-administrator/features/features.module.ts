@@ -9,6 +9,8 @@ import { SettingsModule } from './settings/settings.module';
 import { SubjectsModule } from './subjects/subjects.module';
 import { UsersProfilesModule } from './users-profiles/users-profiles.module';
 import { FacultyEditModule } from './faculty-edit/faculty-edit.module';
+import { ResultsModule } from './results/results.module';
+import { SubjectEditModule } from './subject-edit/subject-edit.module';
 
 @NgModule({
   declarations: [],
@@ -20,8 +22,10 @@ import { FacultyEditModule } from './faculty-edit/faculty-edit.module';
     ProfileModule,
     SettingsModule,
     SubjectsModule,
+    SubjectEditModule,
     UsersModule,
     UsersProfilesModule,
+    ResultsModule,
     FacultyEditModule,
   ],
 })

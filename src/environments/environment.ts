@@ -27,7 +27,15 @@ export const environment = {
     GetUserRoleByUserName: '/User/GetUserRoleByUserName/',
     GetUserRoleByEmail: '/User/GetUserRoleByEmail/',
   },
-  Subject: {},
+  Subject: {
+    GetSubjects: '/Subject/GetSubjects/',
+    AddDepartmentSubjects: '/Subject/AddDepartmentSubjects/',
+    GetSubjectsCount: '/Subject/GetSubjectsCount/',
+    GetSubjectById: '/Subject/GetSubjectById/',
+    GetSubjectsOfDepartment: '/Subject/GetSubjectsOfDepartment/',
+    AddSubject: '/Subject/CreateSubject/',
+    DeleteSubjectById: '/Subject/DeleteSubjectById/',
+  },
   Faculty: {
     GetFaculties: '/Faculty/GetFaculties/',
     GetFacultiesCount: '/Faculty/GetFacultiesCount/',

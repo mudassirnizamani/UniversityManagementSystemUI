@@ -77,6 +77,20 @@ const routes: Routes = [
             (module) => module.SubjectsModule
           ),
       },
+      {
+        path: 'subjects/:id',
+        loadChildren: () =>
+          import('./features/subject-edit/subject-edit.module').then(
+            (module) => module.SubjectEditModule
+          ),
+      },
+      {
+        path: 'results',
+        loadChildren: () =>
+          import('./features/results/results.module').then(
+            (module) => module.ResultsModule
+          ),
+      },
     ],
   },
 ];
