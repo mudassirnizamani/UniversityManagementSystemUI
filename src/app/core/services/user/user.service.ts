@@ -67,4 +67,8 @@ export class UserService {
       `${environment.APIBase}${environment.User.GetHeadOfDepartments}`
     );
   }
+
+  getStudents() {
+    return this.http.get(`${environment.APIBase}${environment.User.GetStudents}`)
+  }
 }

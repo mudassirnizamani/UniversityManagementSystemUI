@@ -91,6 +91,13 @@ const routes: Routes = [
             (module) => module.ResultsModule
           ),
       },
+      {
+        path: 'result/:id',
+        loadChildren: () =>
+          import('./features/result-edit/result-edit.module').then(
+            (module) => module.ResultEditModule
+          ),
+      },
     ],
   },
 ];

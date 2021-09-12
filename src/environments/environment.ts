@@ -20,6 +20,7 @@ export const environment = {
     GetUsers: '/User/GetUsers/',
     GetCourseAdvisers: '/User/GetCourseAdvisers/',
     GetDeans: '/User/GetDeans/',
+    GetStudents: '/User/GetStudents/',
     GetHeadOfDepartments: '/User/GetHeadOfDepartments/',
     GetUserByUserName: '/User/GetUserByUserName/',
     GetUserById: '/User/GetUserById/',
@@ -35,6 +36,13 @@ export const environment = {
     GetSubjectsOfDepartment: '/Subject/GetSubjectsOfDepartment/',
     AddSubject: '/Subject/CreateSubject/',
     DeleteSubjectById: '/Subject/DeleteSubjectById/',
+  },
+  Result: {
+    GetResults: '/Result/GetResults/',
+    GetResultsCount: '/Result/GetResultsCount/',
+    GetResultById: '/Result/GetResultById/',
+    AddResult: '/Result/CreateResult/',
+    DeleteResultById: '/Result/DeleteResultById/',
   },
   Faculty: {
     GetFaculties: '/Faculty/GetFaculties/',

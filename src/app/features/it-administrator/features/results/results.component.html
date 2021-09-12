@@ -1,1 +1,173 @@
-<p>results works!</p>
+<div
+  class="
+    text-3xl
+    font-semibold font-sans
+    text-black
+    w-100
+    bg-white
+    p-3
+    pl-4
+    mt-10
+    rounded-lg
+    mb-7
+  "
+>
+  Results
+  <button
+    pButton
+    pRipple
+    type="button"
+    label="Add New"
+    class="p-button-text"
+    (click)="showDialog()"
+  ></button>
+</div>
+
+<p-table [value]="results" responsiveLayout="scroll">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>StudentName</th>
+      <th>Semester</th>
+      <th>Year</th>
+      <th>Department</th>
+      <th>Subject</th>
+      <th>Marks</th>
+      <th>Percentage</th>
+      <th>Grade</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-result>
+    <tr>
+      <td>
+        <a
+          routerLink="{{ result.studentId }}"
+          routerLinkActive="router-link-active"
+          class="text-blue-500"
+          >{{ result.studentName }}</a
+        >
+      </td>
+      <td>
+        <p>{{ result.semester }}</p>
+      </td>
+      <td>
+        <p>{{ result.year }}</p>
+      </td>
+      <td>
+        <a
+          routerLink="{{ result.departmentId }}"
+          routerLinkActive="router-link-active"
+          class="text-blue-500"
+          >{{ result.departmentName }}</a
+        >
+      </td>
+      <td>
+        <a
+          routerLink="{{ result.subjectId }}"
+          routerLinkActive="router-link-active"
+          class="text-blue-500"
+          >{{ result.subjectName }}</a
+        >
+      </td>
+      <td>
+        <p>{{ result.marks }}</p>
+      </td>
+      <td>
+        <p>{{ result.percentage }}</p>
+      </td>
+      <td>
+        <p>{{ result.grade }}</p>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
+
+<p-dialog
+  [(visible)]="display"
+  [breakpoints]="{ '960px': '75vw', '640px': '100vw' }"
+  [style]="{ width: '50vw' }"
+>
+  <ng-template pTemplate="header">Add Result</ng-template>
+  <div class="form flex flex-col" style="width: 100%">
+    <p-dropdown
+      [options]="students"
+      [(ngModel)]="student"
+      style="width: 499px !important"
+      class="my-2"
+      placeholder="Select Student"
+      optionLabel="userName"
+    ></p-dropdown>
+
+    <p-dropdown
+      [options]="departments"
+      [(ngModel)]="department"
+      style="width: 499px !important"
+      class="my-2"
+      placeholder="Select Department"
+      optionLabel="name"
+    ></p-dropdown>
+
+    <p-dropdown
+      [options]="subjects"
+      [(ngModel)]="subject"
+      style="width: 499px !important"
+      class="my-2"
+      placeholder="Select Subject"
+      optionLabel="name"
+    ></p-dropdown>
+
+    <input
+      type="text"
+      class="my-2"
+      pInputText
+      placeholder="Year"
+      [(ngModel)]="year"
+    />
+
+    <input
+      type="text"
+      class="my-2"
+      pInputText
+      placeholder="Semester"
+      [(ngModel)]="semester"
+    />
+
+    <input
+      type="text"
+      class="my-2"
+      pInputText
+      placeholder="Marks"
+      [(ngModel)]="marks"
+    />
+
+    <input
+      type="text"
+      class="my-2"
+      pInputText
+      placeholder="Percentage"
+      [(ngModel)]="percentage"
+    />
+
+    <input
+      type="text"
+      class="my-2"
+      pInputText
+      placeholder="Grade"
+      [(ngModel)]="grade"
+    />
+  </div>
+
+  <ng-template pTemplate="footer">
+    <p-button
+      icon="pi pi-times"
+      (click)="display = false"
+      label="Cancel"
+      styleClass="p-button-text"
+    ></p-button>
+    <p-button
+      icon="pi pi-times"
+      (click)="addResult()"
+      label="Ok"
+      styleClass="p-button-text"
+    ></p-button>
+  </ng-template>
+</p-dialog>

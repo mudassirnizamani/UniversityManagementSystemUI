@@ -11,6 +11,7 @@ import { UsersProfilesModule } from './users-profiles/users-profiles.module';
 import { FacultyEditModule } from './faculty-edit/faculty-edit.module';
 import { ResultsModule } from './results/results.module';
 import { SubjectEditModule } from './subject-edit/subject-edit.module';
+import { ResultEditModule } from './result-edit/result-edit.module';
 
 @NgModule({
   declarations: [],
@@ -26,6 +27,7 @@ import { SubjectEditModule } from './subject-edit/subject-edit.module';
     UsersModule,
     UsersProfilesModule,
     ResultsModule,
+    ResultEditModule,
     FacultyEditModule,
   ],
 })
